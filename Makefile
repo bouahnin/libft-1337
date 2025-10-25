@@ -6,7 +6,7 @@
 #    By: bouahnin <bouahnin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/17 15:59:36 by bouahnin          #+#    #+#              #
-#    Updated: 2025/10/25 20:44:15 by bouahnin         ###   ########.fr        #
+#    Updated: 2025/10/25 21:29:23 by bouahnin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,8 +35,8 @@ $(NAME): $(M_OBJS)
 %.o: %.c
 	$(CC) -c $(FLAGS) -I$(INCL_DIR) $< -o $@
 
-bonus: $(B_OBJS)
-	ar rcs libft.a $^
+bonus: $(M_OBJS) $(B_OBJS)
+	ar rcs $(NAME) $(M_OBJS) $(B_OBJS)
 
 $(B_OBJS): %.o: %.c
 	$(CC) -c $(FLAGS) -I$(INCL_DIR) $< -o $@
