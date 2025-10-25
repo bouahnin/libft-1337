@@ -6,7 +6,7 @@
 /*   By: bouahnin <bouahnin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 15:59:19 by bouahnin          #+#    #+#             */
-/*   Updated: 2025/10/17 14:26:12 by bouahnin         ###   ########.fr       */
+/*   Updated: 2025/10/25 18:14:11 by bouahnin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,8 @@
 char	*ft_strrchr(const char *s, int c)
 {
 	size_t	len;
-	size_t	z;
 
 	len = ft_strlen(s);
-	z = 0;
 	while (len > 0)
 	{
 		len--;
