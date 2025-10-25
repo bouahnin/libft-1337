@@ -6,7 +6,7 @@
 /*   By: bouahnin <bouahnin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 13:42:15 by bouahnin          #+#    #+#             */
-/*   Updated: 2025/10/21 21:39:25 by bouahnin         ###   ########.fr       */
+/*   Updated: 2025/10/25 20:53:30 by bouahnin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,16 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*str;
 	size_t	z;
+	size_t	szlen;
 
 	if (s == NULL)
 		return (NULL);
-	if (start >= ft_strlen(s))
-	{
-		str = malloc(1);
-		str[0] = '\0';
-		return (str);
-	}
+	szlen = ft_strlen(s);
+	if (start >= szlen)
+		return (ft_strdup(""));
 	z = 0;
+	if (len > szlen - start)
+		len = szlen - start;
 	str = malloc(len + 1);
 	if (!str)
 		return (NULL);
