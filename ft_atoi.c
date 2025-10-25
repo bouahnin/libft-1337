@@ -6,7 +6,7 @@
 /*   By: bouahnin <bouahnin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 11:34:28 by bouahnin          #+#    #+#             */
-/*   Updated: 2025/10/15 18:20:03 by bouahnin         ###   ########.fr       */
+/*   Updated: 2025/10/25 20:07:20 by bouahnin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ int	ft_atoi(const char *str)
 	res = 0;
 	n = 1;
 	z = 0;
-	if (!str)
-		return (0);
 	while (str[z] == ' ' || (str[z] >= 9 && str[z] <= 13))
 	{
 		z++;

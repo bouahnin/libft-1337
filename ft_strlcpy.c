@@ -6,7 +6,7 @@
 /*   By: bouahnin <bouahnin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 20:15:07 by bouahnin          #+#    #+#             */
-/*   Updated: 2025/10/17 15:25:58 by bouahnin         ###   ########.fr       */
+/*   Updated: 2025/10/25 20:24:49 by bouahnin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	size_t	z;
 
 	z = 0;
-	if (!src || !dst)
-		return (0);
 	if (size > 0)
 	{
 		while (src[z] && z < size - 1)

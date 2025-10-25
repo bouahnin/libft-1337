@@ -6,7 +6,7 @@
 /*   By: bouahnin <bouahnin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 14:34:36 by bouahnin          #+#    #+#             */
-/*   Updated: 2025/10/21 21:35:53 by bouahnin         ###   ########.fr       */
+/*   Updated: 2025/10/25 18:57:29 by bouahnin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	start = 0;
 	end = 0;
 	new = malloc(trim(s1, set, &start, &end) * sizeof(char) + 1);
+	if (!new)
+		return (NULL);
 	z = 0;
 	if (end == -1)
 		return (ft_strdup(""));
