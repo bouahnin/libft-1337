@@ -6,7 +6,7 @@
 /*   By: bouahnin <bouahnin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 18:23:55 by bouahnin          #+#    #+#             */
-/*   Updated: 2025/10/25 15:37:15 by bouahnin         ###   ########.fr       */
+/*   Updated: 2025/10/26 15:46:37 by bouahnin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,6 @@ void				ft_lstdelone(t_list *lst, void (*del)(void *));
 void				ft_lstclear(t_list **lst, void (*del)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
+void				ft_lstiter(t_list *lst, void (*f)(void *));
 
 #endif
