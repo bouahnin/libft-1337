@@ -6,12 +6,14 @@
 #    By: bouahnin <bouahnin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/17 15:59:36 by bouahnin          #+#    #+#              #
-#    Updated: 2025/10/26 15:51:52 by bouahnin         ###   ########.fr        #
+#    Updated: 2025/10/28 09:00:32 by bouahnin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
-INCL_DIR = .
+CC = cc
+FLAGS = -Wall -Werror -Wextra
+
 M_SRCS = ft_isascii.c ft_memmove.c ft_split.c ft_strlcpy.c ft_strtrim.c \
 ft_atoi.c ft_isdigit.c ft_memset.c ft_strchr.c ft_strlen.c ft_substr.c \
 ft_bzero.c ft_isprint.c ft_putchar_fd.c ft_strdup.c ft_strmapi.c ft_tolower.c \
@@ -20,26 +22,21 @@ ft_isalnum.c ft_memcmp.c ft_putnbr_fd.c ft_strjoin.c ft_strnstr.c \
 ft_isalpha.c ft_memcpy.c ft_putstr_fd.c ft_strlcat.c ft_strrchr.c
 
 B_SRCS = ft_lstadd_front.c ft_lstadd_back.c ft_lstnew.c ft_lstsize.c ft_lstlast.c \
-	ft_lstdelone.c ft_lstclear.c ft_lstmap.c ft_lstiter.c
+ft_lstdelone.c ft_lstclear.c ft_lstmap.c ft_lstiter.c
 
 M_OBJS = $(M_SRCS:.c=.o)
 B_OBJS = $(B_SRCS:.c=.o)
-CC = cc
-FLAGS = -Wall -Werror -Wextra
 
 all: $(NAME)
 
 $(NAME): $(M_OBJS)
 	ar rcs $(NAME) $(M_OBJS)
 
+bonus: $(M_OBJS) $(B_OBJS)
+	ar rcs $(NAME) $(M_OBJS) $(B_OBJS)
+
 %.o: %.c
-	$(CC) -c $(FLAGS) -I$(INCL_DIR) $< -o $@
-
-bonus: $(B_OBJS)
-	ar rcs $(NAME) $(B_OBJS)
-
-$(B_OBJS): %.o: %.c
-	$(CC) -c $(FLAGS) -I$(INCL_DIR) $< -o $@
+	$(CC) -c $(FLAGS) $< -o $@
 
 clean:
 	rm -f $(B_OBJS) $(M_OBJS)
@@ -48,3 +45,5 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re bonus
